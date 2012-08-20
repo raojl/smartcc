@@ -1,0 +1,290 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "testresource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "testresource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CMUAPITest.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CMUAPITest.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 CMUAPITest"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "CMUAPITest 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2009",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_CMUAPITEST_DIALOG DIALOGEX 0, 0, 340, 310
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CMUAPITest"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "Assign",IDC_BTNASSIGN,128,12,44,16
+    GROUPBOX        "",IDC_STATIC,122,2,211,155
+    LTEXT           "DN1:",IDC_STATIC,34,12,18,9
+    EDITTEXT        IDC_EDTDN1,54,10,43,13,ES_AUTOHSCROLL
+    LTEXT           "Call1:",IDC_STATIC,26,44,24,9
+    LTEXT           "Call2:",IDC_STATIC,26,59,25,9
+    EDITTEXT        IDC_EDTCALL1,54,41,59,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTCALL2,54,57,59,13,ES_AUTOHSCROLL
+    LTEXT           "RouteID:",IDC_STATIC,17,76,33,9
+    EDITTEXT        IDC_EDTROUTEID,54,73,59,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Deassign",IDC_BTNDEASSIGN,174,12,44,16
+    PUSHBUTTON      "MakeCall",IDC_BTNMAKECALL,128,30,44,16
+    PUSHBUTTON      "HangupCall",IDC_BTNHANGUPCALL,174,30,44,16
+    PUSHBUTTON      "SendDTMF",IDC_BTNSENDDTMF,128,137,44,16
+    PUSHBUTTON      "StartRec",IDC_BTNSTARTREC,128,119,44,16
+    PUSHBUTTON      "StopRec",IDC_BTNSTOPREC,174,119,44,16
+    PUSHBUTTON      "SingleStepTransfer",IDC_BTNSINGLESTEPTRANSFER,128,83,90,
+                    16
+    PUSHBUTTON      "SingleStepConference",IDC_BTNSINGLESTEPCONFERENCE,220,
+                    83,90,16
+    EDITTEXT        IDC_EDTJOINMODE,311,84,14,13,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,122,155,211,121
+    LTEXT           "CallerNum:",IDC_STATIC,11,125,40,9
+    LTEXT           "CalledNum:",IDC_STATIC,11,141,40,9
+    LTEXT           "DTMF:",IDC_STATIC,30,172,21,8
+    LTEXT           "FileName:",IDC_STATIC,15,156,35,8
+    EDITTEXT        IDC_EDTCALLERNUM,54,122,59,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTCALLEDNUM,54,138,59,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTFILENAME,54,154,59,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTDTMFDIGITS,54,169,59,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "gc_open",IDC_BTNGCOPEN,128,163,59,16
+    PUSHBUTTON      "gc_close",IDC_BTNGCCLOSE,190,163,59,16
+    PUSHBUTTON      "gc_makecall",IDC_BTNGCMAKECALL,252,163,59,16
+    PUSHBUTTON      "RespondtoRoute",IDC_BTNRESPONDTOROUTE,128,101,90,16
+    PUSHBUTTON      "gc_answercall",IDC_BTNANSWERCALL,128,181,59,16
+    PUSHBUTTON      "gc_hangupcall",IDC_BTNGCHANGUPCALL,190,181,59,16
+    PUSHBUTTON      "gc_blindtransfer",IDC_BTNBLINDTRANSFER,252,181,71,16
+    PUSHBUTTON      "dx_play",IDC_BTNDXPLAY,128,217,59,16
+    PUSHBUTTON      "dx_addiottdata",IDC_BTNADDIOTTDATA,190,235,59,16
+    PUSHBUTTON      "dx_playiottdata",IDC_BTNPLAYIOTTDATA,252,235,71,16
+    PUSHBUTTON      "dx_getdig",IDC_BTNDXGETDIG,190,217,59,16
+    PUSHBUTTON      "dx_dial",IDC_BTNDXDIAL,252,217,59,16
+    PUSHBUTTON      "fx_sendfax",IDC_BTNFXSENDFAX,128,253,59,16,WS_DISABLED
+    PUSHBUTTON      "dx_rec",IDC_BTNDXREC,128,235,59,16
+    PUSHBUTTON      " fx_rcvfax",IDC_BTNFXRCVFAX,190,253,59,16,WS_DISABLED
+    PUSHBUTTON      "SetData",IDC_BTNSETDATA,220,101,44,16
+    PUSHBUTTON      "GetData",IDC_BTNGETDATA,220,119,44,16
+    LTEXT           "Key:",IDC_STATIC,268,104,17,10
+    EDITTEXT        IDC_EDTDATAKEY,287,102,38,13,ES_AUTOHSCROLL
+    LTEXT           "Val:",IDC_STATIC,268,123,18,8
+    EDITTEXT        IDC_EDTDATAVALUE,287,121,38,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTDTMFCOUNT,54,185,59,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTTIMEOUT,54,201,59,13,ES_AUTOHSCROLL
+    LTEXT           "DTMFCount:",IDC_STATIC,11,187,42,8
+    LTEXT           "Timeout:",IDC_STATIC,20,203,33,8
+    EDITTEXT        IDC_EDTDEVICETYPE,100,10,13,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "UnsubscribeCallEvent",IDC_BTNUNSUBSCRIBECALLEVENT,221,
+                    281,90,16
+    PUSHBUTTON      "SubscribeCallEvent",IDC_BTNSUBSCRIBECALLEVENT,128,281,
+                    90,16
+    PUSHBUTTON      "gc_dial",IDC_BTNGCDIAL,128,199,59,16
+    PUSHBUTTON      "SendMesage",IDC_BTNSENDMESSAGE,174,137,44,16
+    EDITTEXT        IDC_EDTMESSAGE,54,106,59,13,ES_AUTOHSCROLL
+    LTEXT           "Message:",IDC_STATIC,19,108,32,9
+    PUSHBUTTON      "dx_sendmessage",IDC_BTNDXSENDMESSAGE,252,253,59,16
+    PUSHBUTTON      "Hold",IDC_BTNHOLD,128,47,44,16
+    PUSHBUTTON      "Retrieve",IDC_BTNRETRIEVE,173,47,44,16
+    PUSHBUTTON      "Consult",IDC_BTNCONSULT,128,65,44,16
+    PUSHBUTTON      "Transfer",IDC_BTNTRANSFER,174,65,44,16
+    PUSHBUTTON      "Conference",IDC_BTNCONFERENCE,220,65,44,16
+    PUSHBUTTON      "Reconnect",IDC_BTNRECONNECT,267,65,44,16
+    PUSHBUTTON      "Deflect",IDC_BTNDEFLECT,220,137,44,16,WS_DISABLED
+    PUSHBUTTON      "Pickup",IDC_BTNPICKUP,267,137,44,16,WS_DISABLED
+    LTEXT           "Channel:",IDC_CHANNELID,18,28,32,9
+    EDITTEXT        IDC_EDTCHANNEL,54,25,59,13,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,2,112,274
+    LTEXT           "1-Extn  2-Route  3-IVR",IDC_STATIC,224,15,89,8
+    LTEXT           "AgentID:",IDC_STATIC,17,91,33,9
+    EDITTEXT        IDC_EDTAGENTID,54,89,59,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "ClearCall",IDC_BTNCLEARCALL,220,30,44,16
+    LTEXT           "SIP-Key:",IDC_STATIC,20,219,34,9
+    LTEXT           "SIP-Value:",IDC_STATIC,12,235,40,10
+    PUSHBUTTON      "dx_setsiphead",IDC_BTNDXSETSIPHEADER,190,199,59,16
+    PUSHBUTTON      "dx_getsiphead",IDC_BTNGETSIPHEADER,252,199,59,16
+    EDITTEXT        IDC_EDTSIPHEADERKEY,54,217,59,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTSIPHEADERVALUE,54,234,59,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "PlayText",IDC_PALYTEXT,67,281,50,14
+    EDITTEXT        IDC_PTEXT,13,281,49,13,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CMUAPITest Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CMUAPITest\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CMUAPITest.EXE\0"
+            VALUE "ProductName", "CMUAPITest 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CMUAPITEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 303
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 CMUAPITest(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\CMUAPITest.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

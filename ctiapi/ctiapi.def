@@ -1,0 +1,51 @@
+; CMUAPI.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CMUAPI"
+
+EXPORTS
+	ctcAssign                  @1 
+	ctcDeassign                @2 
+	ctcMakeCall                @3 
+	ctcHangupCall              @4 
+	ctcClearCall               @5 
+	ctcHoldCall                @6 
+	ctcRetrieveCall            @7 
+	ctcConsultationCall        @8 
+	ctcConferenceCall          @9 
+	ctcTransferCall            @10
+	ctcReconnectCall           @11
+	ctcSingleStepTransfer      @12
+	ctcSingleStepConference    @13
+	ctcGetEvent                @14
+	ctcRouteSelected           @15
+	ctcSendDTMF                @16
+	ctcStartRecord             @17
+	ctcStopRecord              @18
+	ctcSetDataValue            @19
+	ctcGetDataValue            @20
+	ctcSnapshot                @21
+	ctcSendMessage             @22
+	gc_open                    @23
+	gc_close                   @24
+	gc_makecall                @25
+	gc_answercall              @26
+	gc_hangupcall              @27
+	gc_blindtransfer           @28
+	gc_dial                    @29
+	dx_play                    @30
+	dx_addiottdata             @31
+	dx_playiottdata            @32
+	dx_getdig                  @33
+	dx_dial                    @34
+	dx_rec                     @35
+	dx_sendmessage             @36
+	fx_sendfax                 @37
+	fx_rcvfax                  @38
+	cmSubscribeCallEvent       @39
+	cmUnsubscribeCallEvent     @40
+	cmInitUser                 @41
+	cmUninitUser               @42
+	dx_setsipheader            @43
+	dx_getsipheader            @44
+	fx_playtext	           @45
+  

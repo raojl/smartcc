@@ -1,0 +1,99 @@
+************************************************************************************************
+截止2012-03-28修改内容 add by caoyj
+1、原始话路为外线时，咨询振铃时外线挂机，外中继状态会先从DST_BEHELD改变到DST_MEETCONNECTED后收到EvtReleased
+2、修改文件TDeviceState.cpp
+************************************************************************************************
+截止2012-03-15修改内容 add by caoyj
+1、推翻以前AMI和AGI事件同步，统一使用AMI事件来处理状态，不依赖 AGIRequest 事件改变状态机；
+   在AMI事件，依赖 UserEvent 来触发时钟循环；
+   当 AGIRequest 事件到达后，同时等待时钟循环超时，状态机改变；
+2、修改文件TConnectionState.cpp、TASTConnector.cpp、TConnection.cpp、TDevice.cpp、CMUInterface.h
+************************************************************************************************
+截止2012-02-21修改内容 add by caoyj
+1、修改2012.01.06修改导致无法转ivr问题
+2、修改dial接口参数，放default指定的文件，该参数在/etc/asterisk/musiconhold_additional.conf中配置[default]
+2、修改文件TConnectionState.cpp
+************************************************************************************************
+截止2012-01-12修改内容 add by caoyj
+1、IVR路由点设备因有中继虚拟设备事件，不需要发IVR路由点设备事件给TS
+2、修改文件：TDevice.cpp
+************************************************************************************************
+截止2012-01-06修改内容  add by caoyj
+1、在一定压力下，AMi事件滞后于AGI事件，需要先补发Newchannel事件
+2、OnEvtAGIRequest和OnEvtUserEvent两事件序列不能保证正常的顺序，原OnEvtUserEvent中增加逻辑判断，OnEvtAGIRequest中增加处理
+3、m_AgiEvt从TASTConnector放到TASTBuffer AGI句柄上，防止待发AGI事件被覆盖问题
+4、修改文件TConnectionState.cpp、TASTConnector.cpp、TASTConnector.h
+************************************************************************************************
+截止2011-12-21修改内容  add by caoyj
+1、话机状态Reachable时，重发Evt_ICMU_BackInService消息
+2、修改文件TConnectionState.cpp
+************************************************************************************************
+截止2011-11-24修改内容 add by caoyj
+1、屏蔽同一个分机进行多次单步会议
+   修改TDeviceState::OnCmdSingleStepConference()
+2、如果是meteme监听强插时，剩下两方是监听发起方，应该拆线
+   修改TCallState::OnEvtReleased()
+3、解决呼入通话咨询转时，为"h"导致后续错误的处理
+4、处理EvtTpDisconnected_RetrieveCall（强插监听方挂机）时，给对方发的OpDisconnect事件中OtherParty改为强插监听方
+5、修改文件：TDeviceState.cpp、TCallState.cpp、TDevice.cpp
+************************************************************************************************
+截止2011-11-01修改内容 add by caoyj
+1、解决内部分机拨打溢出到另一个域后，回到本域时新的call导致TS清除的问题
+设备空闲状态下
+		+ new Holly_ScriptRule(Evt_ICMU_Released,-1,DST_IDLE, (ST_ACTION)&TDevice::EvtTpDisconnected )
+2、修改文件：TDeviceStateManage.cpp
+************************************************************************************************
+截止2011-10-08修改内容  add by caoyj
+1、解决Holly_TimeValue msec()和sec()函数导致unsigned long 溢出问题
+2、修改文件：TConnection.cpp
+************************************************************************************************
+截止2011-9-21修改内容
+1、修改HMP做媒体时，保持取保持后，转接ivr问题
+2、修改文件TDevice.cpp,TDeviceState.cpp
+************************************************************************************************
+截止2011-9-17修改内容
+1、修改保持取保持后，转接ivr问题，修改TDevice::ActSingleStepTransfer(),TCallState::OnEvtSSTransferTimer()
+2、修改文件TDevice.cpp,TCallState.cpp
+************************************************************************************************
+截止2011-9-5修改内容
+1、ACE_OS::atoi 最大只能<=2147483647的数，收号时这里会溢出
+2、修改文件TConnectionState.cpp
+************************************************************************************************
+截止2011-8-5修改内容
+1、修改日志，把AgiHandle打印出来
+2、修改ConnectionState状态机，CONN_DISCONNECTED状态下修改
+3、修改文件TConnectionState.cpp、TASTConnector.cpp
+************************************************************************************************
+截止2011-6-18修改内容
+1、增加坐席话机状态检测关系:
+------------------------------------
+   坐席动作或状态   话机必须状态
+------------------------------------
+   签入前            OK 
+------------------------------------
+   签入后            Register
+------------------------------------
+   自动签出          Unregister|Unreachable
+------------------------------------
+注:   话机状态Unknow|Unreachable时不能签入,在asterisk监控中可用"sip show peers"
+
+2、修改文件：TConnectionState.cpp
+************************************************************************************************
+截止2011-6-8修改内容
+1、RingBuff.h移动到Hollylib\include下，与Holly_Tcp_hanlder\IProxy\GlobalService等共享
+
+************************************************************************************************
+截止2011-5-30修改内容
+1、Astrisk做媒体时，ConnectState中AMI接口Evt_ICMU_UserEvent(CauseIVRRequest)补发给CallState的
+Evt_ICMU_Originated 和 Evt_ICMU_Alerting
+   修改为AGI接口Evt_ICMU_AGIRequest来补发
+
+２、修改文件TConnectionState.h和TConnectionState.cpp　
+
+************************************************************************************************
+截止2011-5-9修改内容
+1、在CMU传递SipMessage收到大包时，限制发送字节数；超过200个字节，按前200个字节发送，后面的CMU自动截掉
+   Holly_Uint TConnectionState::OnCmdSendMessage(Holly_Pdu &pdu)
+   Holly_Uint TConnectionState::OnCmdSendMessageEx(Holly_Pdu &pdu)
+2、修改文件：TConnectionState.cpp
+   
